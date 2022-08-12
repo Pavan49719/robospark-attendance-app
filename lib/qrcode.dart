@@ -71,7 +71,7 @@ class _MyQRCodeState extends State<MyQRCode> {
       print("RESULT: ${result!.code}");
       if ((result!.code) != null) {
         // addToDatabase(grn: (result!.code) ?? "");
-        addToDatabase(grn: "12010229");
+        addToDatabase(grn: "12010999");
       }
     });
   }
@@ -79,9 +79,9 @@ class _MyQRCodeState extends State<MyQRCode> {
   addToDatabase({required String grn}) async {
     print('ADDTODATABASE 1');
     final docUser =
-        FirebaseFirestore.instance.collection('students').doc('$formatter');
+        FirebaseFirestore.instance.collection('students').doc('ergdbdbfdfbd');
     final json = {
-      '$grn': grn,
+      'grn': FieldValue.arrayUnion([grn]),
     };
     await docUser.set(json);
   }
