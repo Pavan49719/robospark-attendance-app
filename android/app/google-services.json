@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "742466044816",
+    "project_id": "robodroid-workshop-attendance",
+    "storage_bucket": "robodroid-workshop-attendance.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742466044816:android:7f1261dd79b506b16ee915",
+        "android_client_info": {
+          "package_name": "com.example.attendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742466044816-fjp9qi49sgbq3ne9s2cevuql6q21s2iq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEx3DYI5IE51EEyrMGBQJHJIczVMLE16M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742466044816-fjp9qi49sgbq3ne9s2cevuql6q21s2iq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
