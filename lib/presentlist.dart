@@ -18,12 +18,19 @@ class _AttListState extends State<AttList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.date)),
+      appBar: AppBar(
+          title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(widget.date),
+          Text("Total:${widget.presentList.length}")
+        ],
+      )),
       body: ListView.builder(
           itemCount: widget.presentList.length,
           itemBuilder: (BuildContext context, int index) {
             return ListTile(
-              leading: Text("(${index.toString()}) "),
+              leading: Text("(${(index + 1).toString()}) "),
               title: Text(widget.presentList[index]),
             );
           }),

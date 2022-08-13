@@ -3,22 +3,21 @@ import 'dart:io';
 import 'package:attendance/checkcount.dart';
 import 'package:attendance/domain_att.dart';
 import 'package:attendance/qrcode.dart';
-import 'package:attendance/radiobuttons.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 enum SelectDomain { Prog, Mech, Elex }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class RadioButtons extends StatefulWidget {
+  const RadioButtons({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<RadioButtons> createState() => _RadioButtonsState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _RadioButtonsState extends State<RadioButtons> {
   SelectDomain? _domain;
 
   @override
@@ -28,68 +27,6 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(
           "RoboSpark Attendance App",
           style: TextStyle(overflow: TextOverflow.clip),
-        ),
-      ),
-      drawer: Drawer(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Check Attendance',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => DomainAttendance(
-                            domain: "Prog",
-                          )),
-                );
-              },
-              child: Text("Prog"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => DomainAttendance(
-                            domain: "Mech",
-                          )),
-                );
-              },
-              child: Text("Mech"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => DomainAttendance(
-                            domain: "Elex",
-                          )),
-                );
-              },
-              child: Text("Elex"),
-            ),
-            Container(
-              height: 50,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => RadioButtons(
-                            title: 'Attemdance',
-                          )),
-                );
-              },
-              child: Text("Check Attendance by GRN"),
-            ),
-          ],
         ),
       ),
       body: Center(
@@ -177,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              MyQRCode(domain: _domain!.name)),
+                              CheckByGRN(domain: _domain!.name)),
                     );
                   }
                 },

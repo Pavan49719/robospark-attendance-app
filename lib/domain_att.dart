@@ -1,5 +1,4 @@
 import 'package:attendance/presentlist.dart';
-import 'package:attendance/readdata.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
